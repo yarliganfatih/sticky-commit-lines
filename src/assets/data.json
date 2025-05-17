@@ -1,0 +1,880 @@
+  {
+    "files": [
+      {
+        "type": "directory",
+        "name": "sticky-commit-lines",
+        "children": [
+          {
+            "type": "file",
+            "name": "index.html"
+          },
+          {
+            "type": "file",
+            "name": "script.js"
+          },
+          {
+            "type": "file",
+            "name": "style.css"
+          }
+        ]
+      }
+    ],
+    "commits": [
+      {
+        "hash": "294cbf39c31a2e6f6aa9d82c2d70385f8d504451",
+        "author": "Fatih Yarlıgan",
+        "date": "2025-04-29 21:26:51 +0300",
+        "message": "initial commit",
+        "changes": [
+          {
+            "file": "sticky-commit-lines/index.html",
+            "changes": [
+              {
+                "type": "+",
+                "line": 1,
+                "content": "<!DOCTYPE html>"
+              },
+              {
+                "type": "+",
+                "line": 2,
+                "content": "<html lang=\"en\">"
+              },
+              {
+                "type": "+",
+                "line": 3,
+                "content": "  <head>"
+              },
+              {
+                "type": "+",
+                "line": 4,
+                "content": "    <meta charset=\"UTF-8\" />"
+              },
+              {
+                "type": "+",
+                "line": 5,
+                "content": "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "    <title>Sticky Commit Lines</title>"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "    <link rel=\"stylesheet\" href=\"style.css\" />"
+              },
+              {
+                "type": "+",
+                "line": 8,
+                "content": "  </head>"
+              },
+              {
+                "type": "+",
+                "line": 9,
+                "content": "  <body>"
+              },
+              {
+                "type": "+",
+                "line": 10,
+                "content": "    <div class=\"lineBasket\"></div>"
+              },
+              {
+                "type": "+",
+                "line": 11,
+                "content": "    <div class=\"lineBoard\"></div>"
+              },
+              {
+                "type": "+",
+                "line": 12,
+                "content": "  </body>"
+              },
+              {
+                "type": "+",
+                "line": 13,
+                "content": "</html>"
+              }
+            ]
+          },
+          {
+            "file": "sticky-commit-lines/style.css",
+            "changes": [
+              {
+                "type": "+",
+                "line": 1,
+                "content": "/* normalize css */"
+              },
+              {
+                "type": "+",
+                "line": 2,
+                "content": "* {"
+              },
+              {
+                "type": "+",
+                "line": 3,
+                "content": "  box-sizing: border-box;"
+              },
+              {
+                "type": "+",
+                "line": 4,
+                "content": "  padding: 0;"
+              },
+              {
+                "type": "+",
+                "line": 5,
+                "content": "  margin: 0;"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "  border: 0;"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "  font-size: 100%;"
+              },
+              {
+                "type": "+",
+                "line": 8,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 9,
+                "content": "body {"
+              },
+              {
+                "type": "+",
+                "line": 10,
+                "content": "  margin: 0;"
+              },
+              {
+                "type": "+",
+                "line": 11,
+                "content": "  background: #222;"
+              },
+              {
+                "type": "+",
+                "line": 12,
+                "content": "  color: #ddd;"
+              },
+              {
+                "type": "+",
+                "line": 13,
+                "content": "  overflow: hidden;"
+              },
+              {
+                "type": "+",
+                "line": 14,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 15,
+                "content": ".lineBasket {"
+              },
+              {
+                "type": "+",
+                "line": 16,
+                "content": "  position: fixed;"
+              },
+              {
+                "type": "+",
+                "line": 17,
+                "content": "  height: 100vh;"
+              },
+              {
+                "type": "+",
+                "line": 18,
+                "content": "  width: 500px;"
+              },
+              {
+                "type": "+",
+                "line": 19,
+                "content": "  background: #111;"
+              },
+              {
+                "type": "+",
+                "line": 20,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 21,
+                "content": ".lineBoard {"
+              },
+              {
+                "type": "+",
+                "line": 22,
+                "content": "  width: 100vw;"
+              },
+              {
+                "type": "+",
+                "line": 23,
+                "content": "  overflow-y: scroll;"
+              },
+              {
+                "type": "+",
+                "line": 24,
+                "content": "  padding: 10px 0;"
+              },
+              {
+                "type": "+",
+                "line": 25,
+                "content": "  display: flex;"
+              },
+              {
+                "type": "+",
+                "line": 26,
+                "content": "  gap: 20px;"
+              },
+              {
+                "type": "+",
+                "line": 27,
+                "content": "  scrollbar-width: none;"
+              },
+              {
+                "type": "+",
+                "line": 28,
+                "content": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "76b168c50d40a1b21252fe4684526b24860ca4a9",
+        "author": "Fatih Yarlıgan",
+        "date": "2025-04-29 22:17:25 +0300",
+        "message": "feat: sticky lines with scroll",
+        "changes": [
+          {
+            "file": "sticky-commit-lines/index.html",
+            "changes": [
+              {
+                "type": "-",
+                "line": 11,
+                "content": "    <div class=\"lineBoard\"></div>"
+              },
+              {
+                "type": "-",
+                "line": 11,
+                "content": "  </body>"
+              },
+              {
+                "type": "-",
+                "line": 11,
+                "content": "</html>"
+              },
+              {
+                "type": "+",
+                "line": 11,
+                "content": "    <div class=\"lineBoard\">"
+              },
+              {
+                "type": "+",
+                "line": 12,
+                "content": "      <div class=\"headArea\"></div>"
+              },
+              {
+                "type": "+",
+                "line": 13,
+                "content": "      <div class=\"line commitHeader\">Commit Header 01</div>"
+              },
+              {
+                "type": "+",
+                "line": 14,
+                "content": "      <div class=\"line\" style=\"--line-num: 1;\">Line 01</div>"
+              },
+              {
+                "type": "+",
+                "line": 15,
+                "content": "      <div class=\"line\" style=\"--line-num: 2;\">Line 02</div>"
+              },
+              {
+                "type": "+",
+                "line": 16,
+                "content": "      <div class=\"line commitHeader\">Commit Header 02</div>"
+              },
+              {
+                "type": "+",
+                "line": 17,
+                "content": "      <div class=\"line\" style=\"--line-num: 3;\">Line 03</div>"
+              },
+              {
+                "type": "+",
+                "line": 18,
+                "content": "      <div class=\"line\" style=\"--line-num: 4;\">Line 04</div>"
+              },
+              {
+                "type": "+",
+                "line": 19,
+                "content": "      <div class=\"line commitHeader\">Commit Header 03</div>"
+              },
+              {
+                "type": "+",
+                "line": 20,
+                "content": "      <div class=\"line\" style=\"--line-num: 1;\">Line 01+</div>"
+              },
+              {
+                "type": "+",
+                "line": 21,
+                "content": "      <div class=\"line\" style=\"--line-num: 4;\">Line 04+</div>"
+              },
+              {
+                "type": "+",
+                "line": 22,
+                "content": "      <div class=\"line\" style=\"--line-num: 6;\">Line 06</div>"
+              },
+              {
+                "type": "+",
+                "line": 23,
+                "content": "      <div class=\"tailArea\"></div>"
+              },
+              {
+                "type": "+",
+                "line": 24,
+                "content": "    </div>"
+              },
+              {
+                "type": "+",
+                "line": 25,
+                "content": "  </body> "
+              },
+              {
+                "type": "+",
+                "line": 26,
+                "content": "</html> "
+              }
+            ]
+          },
+          {
+            "file": "sticky-commit-lines/style.css",
+            "changes": [
+              {
+                "type": "-",
+                "line": 1,
+                "content": "/* normalize css */"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "* {"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "  box-sizing: border-box;"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "  padding: 0;"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "  margin: 0;"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "  border: 0;"
+              },
+              {
+                "type": "-",
+                "line": 1,
+                "content": "  font-size: 100%;"
+              },
+              {
+                "type": "+",
+                "line": 1,
+                "content": ":root {"
+              },
+              {
+                "type": "+",
+                "line": 2,
+                "content": "  --line-num: 0;"
+              },
+              {
+                "type": "+",
+                "line": 3,
+                "content": "  --line-gap: 16px;"
+              },
+              {
+                "type": "+",
+                "line": 4,
+                "content": "  --top-h: 32px;"
+              },
+              {
+                "type": "+",
+                "line": 5,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": " * {"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "  /* no normalize css */"
+              },
+              {
+                "type": "+",
+                "line": 29,
+                "content": ".lineBoard .line {"
+              },
+              {
+                "type": "+",
+                "line": 30,
+                "content": "  position: sticky;"
+              },
+              {
+                "type": "+",
+                "line": 31,
+                "content": "  left: 10px;"
+              },
+              {
+                "type": "+",
+                "line": 32,
+                "content": "  min-width: 480px;"
+              },
+              {
+                "type": "+",
+                "line": 33,
+                "content": "  max-width: 480px;"
+              },
+              {
+                "type": "+",
+                "line": 34,
+                "content": "  font-family: Consolas, monaco, monospace;"
+              },
+              {
+                "type": "+",
+                "line": 35,
+                "content": "  font-size: 12px;"
+              },
+              {
+                "type": "+",
+                "line": 36,
+                "content": "  height: 15px;"
+              },
+              {
+                "type": "+",
+                "line": 37,
+                "content": "  background: #1f1f1f;"
+              },
+              {
+                "type": "+",
+                "line": 38,
+                "content": "  margin-left: -500px;"
+              },
+              {
+                "type": "+",
+                "line": 39,
+                "content": "  margin-top: calc(var(--top-h) + var(--line-num) * var(--line-gap));"
+              },
+              {
+                "type": "+",
+                "line": 40,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 41,
+                "content": ".lineBoard .commitHeader {"
+              },
+              {
+                "type": "+",
+                "line": 42,
+                "content": "  height: 32px;"
+              },
+              {
+                "type": "+",
+                "line": 43,
+                "content": "  background: #1a1a1a;"
+              },
+              {
+                "type": "+",
+                "line": 44,
+                "content": "  margin-left: 0;"
+              },
+              {
+                "type": "+",
+                "line": 45,
+                "content": "  margin-top: 0;"
+              },
+              {
+                "type": "+",
+                "line": 46,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 47,
+                "content": ".headArea {"
+              },
+              {
+                "type": "+",
+                "line": 48,
+                "content": "  min-width: 490px;"
+              },
+              {
+                "type": "+",
+                "line": 49,
+                "content": "}"
+              },
+              {
+                "type": "+",
+                "line": 50,
+                "content": ".tailArea {"
+              },
+              {
+                "type": "+",
+                "line": 51,
+                "content": "  min-width: calc(100% - 490px);"
+              },
+              {
+                "type": "+",
+                "line": 52,
+                "content": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "4727bb76fa8ce45f06ee09d16e2cda0163cfeca0",
+        "author": "Fatih Yarlıgan",
+        "date": "2025-04-29 22:35:50 +0300",
+        "message": "feat: vertical & horizontal scroll optimization with javascript",
+        "changes": [
+          {
+            "file": "sticky-commit-lines/index.html",
+            "changes": [
+              {
+                "type": "-",
+                "line": 25,
+                "content": "  </body> "
+              },
+              {
+                "type": "-",
+                "line": 25,
+                "content": "</html> "
+              },
+              {
+                "type": "+",
+                "line": 25,
+                "content": "    <script src=\"script.js\"></script>"
+              },
+              {
+                "type": "+",
+                "line": 26,
+                "content": "  </body>"
+              },
+              {
+                "type": "+",
+                "line": 27,
+                "content": "</html>"
+              }
+            ]
+          },
+          {
+            "file": "sticky-commit-lines/script.js",
+            "changes": [
+              {
+                "type": "+",
+                "line": 1,
+                "content": "// since commit range is 500px"
+              },
+              {
+                "type": "+",
+                "line": 2,
+                "content": "window.onwheel = (event) => {"
+              },
+              {
+                "type": "+",
+                "line": 3,
+                "content": "    const isScrollingDown = Math.sign(event.wheelDeltaY);"
+              },
+              {
+                "type": "+",
+                "line": 4,
+                "content": "    if (isScrollingDown != 0)"
+              },
+              {
+                "type": "+",
+                "line": 5,
+                "content": "        document.querySelector('.lineBoard')"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "            .scrollLeft += event.deltaY > 0 ? 500 : -500;"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "dce37844d41d473c817499473c4d7ffad84676cc",
+        "author": "Fatih Yarlıgan",
+        "date": "2025-04-29 22:42:22 +0300",
+        "message": "refactor: used css variables for dynamic line design",
+        "changes": [
+          {
+            "file": "sticky-commit-lines/script.js",
+            "changes": [
+              {
+                "type": "-",
+                "line": 1,
+                "content": "// since commit range is 500px"
+              },
+              {
+                "type": "+",
+                "line": 1,
+                "content": "const boardW = document.querySelector('.lineBasket').offsetWidth;"
+              },
+              {
+                "type": "-",
+                "line": 6,
+                "content": "            .scrollLeft += event.deltaY > 0 ? 500 : -500;"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "            .scrollLeft += event.deltaY > 0 ? boardW : -boardW;"
+              }
+            ]
+          },
+          {
+            "file": "sticky-commit-lines/style.css",
+            "changes": [
+              {
+                "type": "-",
+                "line": 4,
+                "content": "  --top-h: 32px;"
+              },
+              {
+                "type": "-",
+                "line": 4,
+                "content": "}"
+              },
+              {
+                "type": "-",
+                "line": 4,
+                "content": " * {"
+              },
+              {
+                "type": "-",
+                "line": 4,
+                "content": "  /* no normalize css */"
+              },
+              {
+                "type": "+",
+                "line": 4,
+                "content": "  --top-h: calc(2 * var(--line-gap));"
+              },
+              {
+                "type": "+",
+                "line": 5,
+                "content": "  --commit-gap: 20px;"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "  --board-w: 500px;"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "  --line-w: calc(var(--board-w) - var(--commit-gap));"
+              },
+              {
+                "type": "-",
+                "line": 18,
+                "content": "  width: 500px;"
+              },
+              {
+                "type": "+",
+                "line": 18,
+                "content": "  width: var(--board-w);"
+              },
+              {
+                "type": "-",
+                "line": 26,
+                "content": "  gap: 20px;"
+              },
+              {
+                "type": "+",
+                "line": 26,
+                "content": "  gap: var(--commit-gap);"
+              },
+              {
+                "type": "-",
+                "line": 31,
+                "content": "  left: 10px;"
+              },
+              {
+                "type": "-",
+                "line": 31,
+                "content": "  min-width: 480px;"
+              },
+              {
+                "type": "-",
+                "line": 31,
+                "content": "  max-width: 480px;"
+              },
+              {
+                "type": "+",
+                "line": 31,
+                "content": "  left: calc(var(--commit-gap) / 2);"
+              },
+              {
+                "type": "+",
+                "line": 32,
+                "content": "  min-width: var(--line-w);"
+              },
+              {
+                "type": "+",
+                "line": 33,
+                "content": "  max-width: var(--line-w);"
+              },
+              {
+                "type": "-",
+                "line": 36,
+                "content": "  height: 15px;"
+              },
+              {
+                "type": "+",
+                "line": 36,
+                "content": "  height: calc(var(--line-gap) - 1px);"
+              },
+              {
+                "type": "-",
+                "line": 38,
+                "content": "  margin-left: -500px;"
+              },
+              {
+                "type": "+",
+                "line": 38,
+                "content": "  margin-left: calc(-1 * var(--line-w) - var(--commit-gap));"
+              },
+              {
+                "type": "-",
+                "line": 42,
+                "content": "  height: 32px;"
+              },
+              {
+                "type": "+",
+                "line": 42,
+                "content": "  height: var(--top-h);"
+              },
+              {
+                "type": "-",
+                "line": 48,
+                "content": "  min-width: 490px;"
+              },
+              {
+                "type": "+",
+                "line": 48,
+                "content": "  min-width: calc(var(--board-w) - var(--commit-gap) / 2);"
+              },
+              {
+                "type": "-",
+                "line": 51,
+                "content": "  min-width: calc(100% - 490px);"
+              },
+              {
+                "type": "+",
+                "line": 51,
+                "content": "  min-width: calc(100% - (var(--board-w) + var(--commit-gap) / 2));"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "1773e95582ef702447ddfcaed03b1d90f680ce5f",
+        "author": "Fatih Yarlıgan",
+        "date": "2025-05-17 20:41:30 +0300",
+        "message": "fix: minor style changes",
+        "changes": [
+          {
+            "file": "sticky-commit-lines/style.css",
+            "changes": [
+              {
+                "type": "-",
+                "line": 6,
+                "content": "  --board-w: 500px;"
+              },
+              {
+                "type": "-",
+                "line": 6,
+                "content": "  --line-w: calc(var(--board-w) - var(--commit-gap));"
+              },
+              {
+                "type": "+",
+                "line": 6,
+                "content": "  --line-w: 480px;"
+              },
+              {
+                "type": "+",
+                "line": 7,
+                "content": "  --board-w: calc(var(--line-w) + var(--commit-gap));"
+              },
+              {
+                "type": "-",
+                "line": 11,
+                "content": "  background: #222;"
+              },
+              {
+                "type": "+",
+                "line": 11,
+                "content": "  background: #333;"
+              },
+              {
+                "type": "-",
+                "line": 19,
+                "content": "  background: #111;"
+              },
+              {
+                "type": "+",
+                "line": 19,
+                "content": "  background: #222;"
+              },
+              {
+                "type": "-",
+                "line": 22,
+                "content": "  width: 100vw;"
+              },
+              {
+                "type": "+",
+                "line": 22,
+                "content": "  height: 100vw;"
+              },
+              {
+                "type": "-",
+                "line": 38,
+                "content": "  margin-left: calc(-1 * var(--line-w) - var(--commit-gap));"
+              },
+              {
+                "type": "+",
+                "line": 38,
+                "content": "  margin-left: calc(-1 * (var(--line-w) + var(--commit-gap)));"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,35 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useRef, useState } from "react";
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import LineBoard from "./components/LineBoard";
+import { LuGitCommitVertical } from "react-icons/lu";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [navOpen, setNavOpen] = useState(true);
+
+  const BASE_URL = import.meta.env.BASE_URL;
+  const [selectedFile, setSelectedFile] = useState<string>(
+    window.location.pathname.replace(BASE_URL, "") ?? ""
+  );
+  const handleCurrentFileSideBar = (path: string) => {
+    setSelectedFile(path);
+    window.history.pushState({}, "", BASE_URL + path);
+  };
+  useEffect(() => {
+    window.addEventListener("popstate", () => {
+      const currentFile = window.location.pathname.replace(BASE_URL, "") ?? "";
+      setSelectedFile(currentFile);
+    });
+  }, []);
+
+  const boardRef = useRef<HTMLDivElement>(null);
+  const basketRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (!boardRef.current || !basketRef.current) return;
+
+      const boardW = basketRef.current.offsetWidth;
+      const isScrollingDown = Math.sign(event.deltaY);
+
+      if (isScrollingDown !== 0) {
+        boardRef.current.scrollLeft += event.deltaY > 0 ? boardW : -boardW;
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={"App h-screen " + (navOpen ? "" : "closedNav")}>
+      <div className="nav flex flex-row bg-zinc-900 w-screen h-screen fixed">
+        <Sidebar
+          navOpen={navOpen}
+          setNavOpen={setNavOpen}
+          selectedFile={selectedFile}
+          handleFileSelect={handleCurrentFileSideBar}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="lineBasket" ref={basketRef}>
+        <div className="w-6 h-screen text-right">
+          <LuGitCommitVertical className="commitIcon ml-3 text-lg" />
+          {Array.from({ length: 98 }, (_, i) => i + 1).map((num) => (
+            <div className="h-4" key={"lineNum" + num}>
+              {num}
+            </div>
+          ))}
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div className="container">
+        <LineBoard selectedFile={selectedFile} boardRef={boardRef}></LineBoard>
+      </div>
+    </div>
+  );
+};
 
-export default App
+export default App;

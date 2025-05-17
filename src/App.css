@@ -1,42 +1,114 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Monaco, Menlo, Consolas, "Droid Sans Mono",
+    "Inconsolata" "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: zincscale;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --sub-dir: 0;
+  --line-num: 0;
+  --line-gap: 16px;
+  --top-p: calc(2 * var(--line-gap));
+  --nav-w: 272px;
+  --left-p: calc(var(--nav-w) + var(--commit-gap) / 2);
+  --commit-gap: 20px;
+  --extra-gap: 30px;
+  --line-w: 550px;
+  --board-w: calc(var(--line-w) + var(--commit-gap) + var(--extra-gap));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.closedNav {
+  --nav-w: 48px;
+  --left-p: calc(var(--nav-w) + var(--commit-gap) / 2);
 }
 
-.card {
-  padding: 2em;
+.nav {
+  position: fixed;
+  height: 100vh;
+  width: var(--nav-w);
 }
 
-.read-the-docs {
-  color: #888;
+.subDir {
+  padding-left: calc(4px + var(--sub-dir) * 12px);
+}
+
+body {
+  margin: 0;
+  color: #ddd;
+  background: #333;
+  overflow: hidden;
+}
+
+.lineBasket {
+  position: fixed;
+  left: var(--nav-w);
+  height: 100vh;
+  width: var(--board-w);
+  background: #222;
+  color: gray;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+.commitIcon {
+  margin-bottom: var(--line-gap);
+  height: var(--top-p);
+}
+
+.lineBoard {
+  background: #333;
+  height: 100vw;
+  overflow-y: scroll;
+  padding: 8px 15px;
+  display: flex;
+  gap: calc(var(--commit-gap) + var(--extra-gap));
+  scrollbar-width: none;
+}
+
+.lineBoard .line {
+  position: sticky;
+  left: calc(var(--left-p) + var(--commit-gap) / 2);
+  min-width: var(--line-w);
+  max-width: var(--line-w);
+  font-family: Consolas, monaco, monospace;
+  font-size: 12px;
+  height: calc(var(--line-gap) - 1px);
+  background: #1f1f1f;
+  margin-left: calc(-1 * var(--board-w));
+  margin-top: calc(var(--top-p) + var(--line-num) * var(--line-gap));
+}
+
+.line pre {
+  margin: -2px 4px 0 4px;
+  white-space: pre;
+}
+.line pre .date {
+  float: right;
+}
+
+.lineBoard .commitHeader {
+  height: var(--top-p);
+  background: #1a1a1a;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.headArea {
+  min-width: calc(var(--nav-w) - 40px);
+}
+.tailArea {
+  min-width: calc(100% - (var(--board-w) + var(--nav-w) + var(--commit-gap) / 2));
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+  background: none !important;
+  color: #d4d4d4 !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: "Fira Code", monospace;
+  text-shadow: none;
+  overflow: hidden;
 }
