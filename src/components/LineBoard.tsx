@@ -21,8 +21,8 @@ function LineBoard({ selectedFile, boardRef }: TextProps) {
   return (
     <div id="lineBoard" ref={boardRef} className="lineBoard">
         <div className="headArea"></div>
-        <div id="scrollTop" key="scrollTop" className="line commitHeader">
-          Scroll Right and Merge commit stacks line by line.
+        <div id="scrollTop" key="scrollTop" className="line commitHeader content-center text-center">
+          Scroll right and merge commit stacks line by line.
         </div>
         {
           gitData.commits.map((commit) => {

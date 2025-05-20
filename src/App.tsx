@@ -64,9 +64,7 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="container">
-        <LineBoard selectedFile={selectedFile} boardRef={boardRef}></LineBoard>
-      </div>
+      <LineBoard selectedFile={selectedFile} boardRef={boardRef}></LineBoard>
     </div>
   );
 };
