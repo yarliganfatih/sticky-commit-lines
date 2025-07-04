@@ -40,7 +40,7 @@ function Sidebar({
 
   return (
     <div className="flex flex-row">
-      <div className="w-12 h-screen flex flex-col justify-between bg-zinc-50 dark:bg-zinc-700">
+      <div className="w-12 h-screen flex flex-col justify-between bg-zinc-700">
         <div className="">
           {elements.map((i) => {
             if (selected_parent[i] === 1)
