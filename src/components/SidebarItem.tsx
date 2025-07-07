@@ -19,7 +19,7 @@ function SidebarItem({ i, currentColor, onClick }: SidebarItemProps) {
         href="#"
         className="sidebar-icon group"
         onClick={() => {
-          let selected_child = [0, 0, 0, 0];
+          let selected_child = [0, 0, 0, 0, 0];
           selected_child[i] = 1;
           onClick(selected_child, i);
         }}

@@ -4,6 +4,7 @@ import Explorer from "./sidebar/Explorer";
 import Search from "./sidebar/Search";
 import Git from "./sidebar/Git";
 import Extensions from "./sidebar/Extensions";
+import AutoScrollExt from "./sidebar/AutoScrollExt";
 import Settings from "./sidebar/Settings";
 
 const WHITE = "#FFFFFF";
@@ -14,6 +15,8 @@ interface SidebarProps {
   setNavOpen: Function;
   selectedFile: string;
   handleFileSelect: any;
+  boardRef: any;
+  basketRef: any;
 }
 
 function Sidebar({
@@ -21,16 +24,18 @@ function Sidebar({
   setNavOpen,
   selectedFile,
   handleFileSelect,
+  boardRef,
+  basketRef,
 }: SidebarProps) {
-  const [selected_parent, setSelected] = useState([1, 0, 0, 0]);
-  const elements = [0, 1, 2, 3];
+  const [selected_parent, setSelected] = useState([1, 0, 0, 0, 0]);
+  const elements = [0, 1, 2, 3, 4];
 
   const handleClickSidebarItem = (selected: number[], i: number) => {
     if (!navOpen) {
       setNavOpen(true);
     } else if (navOpen && selected[i] === selected_parent[i]) {
       setNavOpen(false);
-      setSelected([0, 0, 0, 0]);
+      setSelected([0, 0, 0, 0, 0]);
       return;
     } else if (navOpen && selected[i] !== selected_parent[i]) {
       setNavOpen(true);
@@ -65,9 +70,9 @@ function Sidebar({
         </div>
         <div className="">
           <SidebarItem
-            key={4}
+            key={5}
             onClick={handleClickSidebarItem}
-            i={4}
+            i={5}
             currentColor={CURRENTCOLOR}
           />
         </div>
@@ -82,7 +87,8 @@ function Sidebar({
           (selected_parent.indexOf(1) === 1 && <Search />) ||
           (selected_parent.indexOf(1) === 2 && <Git />) ||
           (selected_parent.indexOf(1) === 3 && <Extensions />) ||
-          (selected_parent.indexOf(1) === 4 && <Settings />)}
+          (selected_parent.indexOf(1) === 4 && <AutoScrollExt boardRef={boardRef} basketRef={basketRef} />) ||
+          (selected_parent.indexOf(1) === 5 && <Settings />)}
       </div>
     </div>
   );

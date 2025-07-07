@@ -52,6 +52,8 @@ const App: React.FC = () => {
           setNavOpen={setNavOpen}
           selectedFile={selectedFile}
           handleFileSelect={handleCurrentFileSideBar}
+          boardRef={boardRef}
+          basketRef={basketRef}
         />
       </div>
       <div className="lineBasket" ref={basketRef}>
