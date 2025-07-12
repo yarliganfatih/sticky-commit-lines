@@ -6,6 +6,8 @@ Scroll right and merge commit stacks line by line.
 
 ![demo](src/assets/demo.gif)
 
+![autoScrollExt](src/assets/autoScrollExt.gif)
+
 ## Getting Started
 
 1. Clone this project.
